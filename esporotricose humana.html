@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Esporotricose humana </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #f0f0f0;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .cabecalho {
+        width: 100%;
+        height: 45px;
+        background-color: black;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        z-index: 1;
+      }
+      .logo {
+        width: 80px;
+        height: 80px;
+        margin-left: 10px;
+        border-radius: 40px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        margin-top: 50px;
+        cursor: pointer;
+      }
+      h1 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        text-align: center;
+        font-size: 40px;
+        margin-top: 65px;
+        transition: color 0.4s ease;
+        text-shadow: 0 3px 4px rgb(228, 190, 47, 1);
+      }
+      h1:hover {
+        color: rgb(228, 190, 47, 1);
+      }
+      .lupa {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      .search-box {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .search-box input {
+        border: none;
+        outline: none;
+        width: 100%;
+      }
+      .search-box input {
+        border: none;
+        outline: none;
+        width: 100%;
+      }
+      .conteudo {
+        margin-top: 130px;
+        margin-left: 10px;
+        margin-right: 50px;
+      }
+      .topic {
+        margin-bottom: 20px;
+        margin-left: 20px;
+        font-size: 18px;
+      }
+      .topic h2 {
+        color: black;
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-shadow: 0 3px 4px rgb(228, 190, 47, 1);
+      }
+      .topic p {
+        color: #555;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      .gatinho {
+        visibility: hidden;
+        width: 110px;
+        position: absolute;
+        top: 4.5%;
+        right: 20%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      }
+      .mostrando {
+        opacity: 1;
+        visibility: visible;
+      }
+      .foto_esporotricose{
+        display: block;
+        align-items: center;
+        width: 500px;
+        height: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+      }
+      .container {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        background: white;
+        border: 1px solid rgb(228, 190, 47, 1);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-top: 150px;
+      }
+      .container p {
+        margin: 0;
+        padding-bottom: 10px;
+        font-weight: bold;
+        color: #333;
+        text-shadow: 0 3px 4px rgb(228, 190, 47, 1);;
+      }
+      .icones {
+        display: flex;
+        gap: 20px;
+      }
+      .icones a {
+        color: black;
+        font-size: 25px;
+        text-decoration: none;
+        transition: color 0.s;
+      }
+      .icones a:hover {
+        color: rgb(228, 190, 47, 1);
+      }
+      .rodape {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        bottom: 0;
+        width: 100%;
+        position: relative;
+        right: 0;
+        left: 0;
+        bottom: 0;
+      }
+      .rodape a {
+        color: #ffd700;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .rodape a:hover {
+        text-decoration: underline;
+      }
+      .linha{
+        margin-top: 50px;
+        color: #333;
+        margin-left: 200px;
+        margin-right: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cabecalho">
+      <img class="lupa" src="lupa3.png" alt="lupa" onclick="toggleSearch()" />
+      <div class="search-box" id="searchBox">
+        <input type="text" placeholder="Buscar..." />
+      </div>
+    </div>
+    <div>
+      <a href="Crazy Cat Gang.html">
+      <img class="logo" src="logo.png" alt="logo ccg" />
+      </a>
+    </div>
+    <h1 onmouseover="showGatinho()" onmouseout="hideGatinho()">
+      Esporotricose Humana
+    </h1>
+    <img class="foto_esporotricose" src="esporotricose.jpg" alt="obeabadosertao.com.br">
+    <hr class="linha">
+    <div class="conteudo">
+      <div class="topic" onclick="toggleTopic(this)">
+        <h2> Principais Causas
+        </h2>
+        <p>
+          A esporotricose humana é uma micose que surge através da entrada do fungo em sua forma de levedura no 
+          organismo, seja por meio de acidentes com espinhos, palha, lascas de madeira ou por arranhões e mordidas 
+          de animais contaminados (sendo o gato o mais comum). Pode assumir diversas formas clínicas, como a esporotricose 
+          cutânea, linfocutânea, extracutânea e disseminada.
+          <p></p>
+        </p>
+        <h2> Profilaxia </h2>
+        <p>
+          É indicado que a exposição ao direta ao fungo seja evitada, priorizando ao máximo o uso de proteção 
+          (como luvas e roupas de mangas longas) ao engajar em atividades que envolvam material proveniente do 
+          solo e plantas, além do uso de calçados em trabalhos rurais. Ademais, é imprescindível que ao manusear 
+          animais contaminados com a esporotricose a proteção seja mantida, evitando o contato com as lesões e feridas 
+          e se protegendo de arranhões e mordidas.
+
+
+        </p>
+        <h2> Diagnóstico e Tratamento </h2>
+        <p>
+          Os sintomas variam de acordo com a região afetada do corpo, sendo comum a coceira, dor, febre e mal-estar. 
+          Porém, caso a doença esteja na sua forma disseminada, é possível surgir tosse, falta de ar, dor ao respirar, 
+          inchaço, dor ao se movimentar e etc. O diagnóstico pode ser feito através da aspiração de material em lesões 
+          ou coleta de material por biópsia. Dessa forma, o tratamento pode ser feito em 3 a 12 meses com o uso de antifúngicos 
+          e a orientação e acompanhamento médico.
+      
+
+        </p>
+      </div>
+      <div>
+        <img class="gatinho" id="gatinho" src="gatinho_2.png" alt="gato">
+        <div class="container">
+          <p>Siga-nos nas redes sociais!</p>
+          <div class="icones">
+            <a href="https://www.facebook.com/crazycatgang" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/crazycatgang" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+        </div>
+      </div>
+    </div>
+    <div id="outras-informacoes" class="topic">
+      <h2>Outras informações sobre Esporotricose, FIV e FELV:</h2>
+      <li class="pontinho">
+        <a href="Sintomas.html"> Sintomas </a>
+      </li>
+      <p></p>
+      <li class="pontinho">
+        <a href="prevencao.html"> Prevenção </a>
+      </li>
+      <p></p>
+      <li class="pontinho">
+        <a href="Tratamento.html"> Tratamento </a>
+      </li>
+      <p></p>
+      <li class="pontinho">
+        <a href="esporotricose humana.html"> Esporotricose Humana</a>
+      </li>
+      <p></p>
+      <li class="pontinho">
+        <a href="FIV.html"> FIV </a>
+      </li>
+      <p></p>
+      <li class="pontinho">
+        <a href="FeLV.html"> FeLV </a>
+      </li>
+    </div>
+      <div class="rodape" >
+        <p></p>
+          Siga-nos nas redes sociais:
+          <a href="https://www.facebook.com/crazycatgang" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://www.instagram.com/crazycatgang" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function toggleSearch() {
+        var searchBox = document.getElementById("searchBox");
+        if (
+          searchBox.style.display === "none" ||
+          searchBox.style.display === ""
+        ) {
+          searchBox.style.display = "block";
+          document.getElementById("searchInput").focus();
+        } else {
+          searchBox.style.display = "none";
+        }
+      }
+
+      function submitSearch() {
+        var searchTerm = document.getElementById("searchInput").value;
+        alert("Você está procurando por: " + searchTerm);
+        return false;
+      }
+
+      function toggleTopic(topic) {
+        topic.classList.toggle("open");
+      }
+      function showGatinho() {
+        var gatinho = document.getElementById("gatinho");
+        gatinho.classList.add("mostrando");
+      }
+
+      function hideGatinho() {
+        var gatinho = document.getElementById("gatinho");
+        gatinho.classList.remove("mostrando");
+      }
+
+    </script>
+  </body>
+</html>

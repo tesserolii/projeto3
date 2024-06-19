@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Tratamento </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #f0f0f0;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .cabecalho {
+        width: 100%;
+        height: 45px;
+        background-color: black;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        z-index: 1;
+      }
+      .logo {
+        width: 80px;
+        height: 80px;
+        margin-left: 10px;
+        border-radius: 40px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        margin-top: 50px;
+        cursor: pointer;
+      }
+      h1 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        text-align: center;
+        font-size: 40px;
+        margin-top: 65px;
+        transition: color 0.4s ease;
+        text-shadow: 0 3px 4px rgb(228, 190, 47, 1);
+      }
+      h1:hover {
+        color: rgb(228, 190, 47, 1);
+      }
+      .lupa {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      .search-box {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .search-box input {
+        border: none;
+        outline: none;
+        width: 100%;
+      }
+      .search-box input {
+        border: none;
+        outline: none;
+        width: 100%;
+      }
+      .conteudo {
+        margin-top: 130px;
+        margin-left: 10px;
+        margin-right: 50px;
+      }
+      .topic {
+        margin-bottom: 20px;
+        margin-left: 20px;
+      }
+      .topic h2 {
+        color: black;
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-shadow: 0 3px 4px rgb(228, 190, 47, 1);
+      }
+      .topic p {
+        color: #555;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      .gatinho {
+        visibility: hidden;
+        width: 110px;
+        position: absolute;
+        top: 4.5%;
+        right: 12%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      }
+      .mostrando {
+        opacity: 1;
+        visibility: visible;
+      }
+      .rodape {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        bottom: 0;
+        width: 100%;
+        position: relative;
+        right: 0;
+        left: 0;
+        bottom: 0;
+      }
+      .rodape a {
+        color: #ffd700;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .rodape a:hover {
+        text-decoration: underline;
+      }
+      .gato{
+        width: 25%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: 60px;
+      }
+      .linha{
+        margin-top: 50px;
+        color: #333;
+        margin-left: 200px;
+        margin-right: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cabecalho">
+      <img class="lupa" src="lupa3.png" alt="lupa" onclick="toggleSearch()" />
+      <div class="search-box" id="searchBox">
+        <input type="text" placeholder="Buscar..." />
+      </div>
+    </div>
+    <div>
+      <a href="Crazy Cat Gang.html">
+      <img class="logo" src="logo.png" alt="logo ccg" />
+      </a>
+    </div>
+    <h1 onmouseover="showGatinho()" onmouseout="hideGatinho()">
+      Tratamento da Esporotricose
+    </h1>
+    <img class="gato"  src="gato_tratamento.webp" alt="gato">
+    <hr class="linha">
+    <div class="conteudo">
+      <div class="topic" onclick="toggleTopic(this)">
+        <h2> Tem cura? Como é feito o tratamento?
+        </h2>
+        <p>
+          A esporotricose em gatos tem cura; porém, é uma doença perigosa e é de extrema importância que o
+        tratamento não seja negligenciado. Após o diagnóstico, o processo de cura deve começar o mais cedo
+        possível para que o bichinho sofra menos e melhore mais rapidamente. Esse processo é demorado, e o
+        gatinho levará um tempo até estar totalmente curado.
+          Para tratar a doença, os felinos recebem antifúngicos
+        orais e antibióticos, além dos cuidados com as lesões. Tratamentos naturais e menos agressivos não 
+        resolverão o problema dos bichanos.
+
+        </p>
+        <h2> Medicamentos e Cuidados</h2>
+        <p>
+            O principal medicamento para tratar esporotricose em gatos é o itraconazol, um antifúngico poderoso.
+          A terbinafina também trata a esporotricose e é utilizada em casos de resistência ao itraconazol. Em 
+          alguns casos, podem ser aplicadas pomadas antifúngicas que complementam o tratamento com os remédios.
+          A receita e dosagem de qualquer medicamento devem ser feitas por um médico veterinário. 
+            Por ser uma doença transmissível, alguns cuidados extras são de extrema importância, como, por exemplo,
+          manter os gatinhos infectados em um ambiente isolado e seguro durante o tratamento. Recomenda-se, também, 
+          limpar o ambiente onde o seu pet está pelo menos uma vez ao dia. Além disso, é necessário higienizar a pele
+          do gato com soro fisiológico e, se indicado pelo veterinário, aplicar a pomada prescrita.
+      
+
+        </p>
+      </div>
+      <img class="gatinho" id="gatinho" src="gatinho_2.png" alt="gato">
+    </div>
+    <div id="outras-informacoes" class="topic">
+      <h2>Outras informações sobre Esporotricose, FIV e FELV:</h2>
+      <li class="pontinho">
+        <a href="Sintomas.html"> Sintomas </a>
+      </li>
+      <p></p>
+      <li class="pontinho">
+        <a href="prevencao.html"> Prevenção </a>
+      </li>
+      <p></p>
+      <li class="pontinho">
+        <a href="Tratamento.html"> Tratamento </a>
+      </li>
+      <p></p>
+      <li class="pontinho">
+        <a href="esporotricose humana.html"> Esporotricose Humana</a>
+      </li>
+      <p></p>
+      <li class="pontinho">
+        <a href="FIV.html"> FIV </a>
+      </li>
+      <p></p>
+      <li class="pontinho">
+        <a href="FeLV.html"> FeLV </a>
+      </li>
+    </div>
+    <div class="rodape" >
+      <p></p>
+        Siga-nos nas redes sociais:
+        <a href="https://www.facebook.com/crazycatgang" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com/crazycatgang" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </p>
+    </div>
+    </div>
+
+    <script>
+      function toggleSearch() {
+        var searchBox = document.getElementById("searchBox");
+        if (
+          searchBox.style.display === "none" ||
+          searchBox.style.display === ""
+        ) {
+          searchBox.style.display = "block";
+          document.getElementById("searchInput").focus();
+        } else {
+          searchBox.style.display = "none";
+        }
+      }
+
+      function submitSearch() {
+        var searchTerm = document.getElementById("searchInput").value;
+        alert("Você está procurando por: " + searchTerm);
+        return false;
+      }
+
+      function toggleTopic(topic) {
+        topic.classList.toggle("open");
+      }
+      function showGatinho() {
+        var gatinho = document.getElementById("gatinho");
+        gatinho.classList.add("mostrando");
+      }
+
+      function hideGatinho() {
+        var gatinho = document.getElementById("gatinho");
+        gatinho.classList.remove("mostrando");
+      }
+
+    </script>
+  </body>
+</html>

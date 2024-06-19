@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevenção</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .cabecalho {
+            width: 100%;
+            height: 45px;
+            background-color: black;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            z-index: 1;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-left: 10px;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-top: 150px;
+        }
+        h1 {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            text-align: center;
+            font-size: 40px;
+            margin-top: 130px; 
+            transition: color 0.4s ease;
+            text-shadow: 0 3px 4px rgb(228, 190, 47, 1);
+            margin-top: 70px;
+        }
+        h1:hover {
+            color: rgb(228, 190, 47, 1);
+        }
+        .lupa {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .search-box {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+        .conteudo {
+            margin-top: 130px;
+            margin-left: 10px;
+            margin-right: 50px;
+        }
+        .topic {
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        .topic h2 {
+            color: black;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 4px rgb(228, 190, 47, 1);
+        }
+        .topic p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .gatinho {
+            visibility: hidden;
+            width: 110px;
+            position: absolute;
+            top: 4.5%;
+            right: 12%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        }
+        .mostrando {
+            opacity: 1;
+            visibility: visible;
+        }
+        .gato {
+            width: 25%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            margin-top: 60px;
+        }
+        .linha {
+            margin-top: 50px;
+            color: #333;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cabecalho">
+        <a href="Crazy Cat Gang.html">
+            <img class="logo" src="logo.png" alt="logo ccg" />
+        </a>
+        <img class="lupa" src="lupa3.png" alt="lupa" onclick="toggleSearch()" />
+        <div class="search-box" id="searchBox">
+            <input type="text" placeholder="Buscar..." />
+        </div>
+    </div>    
+    <h1 onmouseover="showGatinho()" onmouseout="hideGatinho()">
+        Prevenção da Esporotricose
+    </h1>
+    <img class="gato" src="gato_prevencao.jpg" alt="gato">
+    <hr class="linha">
+    <div class="conteudo">
+        <div class="topic">
+            <p>Cuidar bem de gatos envolve algumas práticas básicas de prevenção de saúde, além de medidas específicas para evitar a infecção pelo Vírus da Imunodeficiência Felina (FIV). Aqui estão as orientações gerais e específicas:</p>
+            <h2>Prevenção Básica de Saúde para Gatos</h2>
+            <h3>1. Vacinação Regular:</h3>
+            <p>Mantenha as vacinas em dia, incluindo aquelas contra raiva, panleucopenia, calicivírus e rinotraqueíte.</p>
+            <h3>2. Desparasitação:</h3>
+            <p>Realize tratamentos regulares contra vermes, pulgas e carrapatos.</p>
+            <h3>3. Alimentação Adequada:</h3>
+            <p>Forneça uma dieta balanceada e nutritiva, adequada para a idade e estado de saúde do gato.</p>
+            <h3>4. Água Limpa e Fresca:</h3>
+            <p>Mantenha sempre água fresca disponível.</p>
+            <h3>5. Higiene e Limpeza:</h3>
+            <p>Mantenha a caixa de areia limpa e a área onde o gato vive em boas condições de higiene.</p>
+            <h3>6. Exames Veterinários Regulares:</h3>
+            <p>Leve o gato para check-ups regulares no veterinário para monitorar sua saúde geral e detectar precocemente qualquer problema.</p>
+            <h3>7. Controle de Peso:</h3>
+            <p>Garanta que o gato mantenha um peso saudável através de uma dieta balanceada e exercício adequado.</p>
+            <h3>8. Cuidados Dentários:</h3>
+            <p>Realize escovações regulares e forneça alimentos ou brinquedos que ajudem a manter a saúde bucal.</p>
+        </div>
+    </div>
+    <div class="conteudo">
+        <div class="topic"> 
+            <h2>Prevenção Específica contra o Vírus da Imunodeficiência Felina (FIV)</h2>
+            <h3>1. Vacinação:</h3>
+            <p>Existe uma vacina contra o FIV. Discuta com seu veterinário para determinar se é apropriada para seu gato.</p>
+            <h3>2. Ambiente Seguro:</h3>
+            <p>Mantenha os gatos dentro de casa ou em áreas seguras para evitar brigas com gatos desconhecidos que podem estar infectados.</p>
+            <h3>3. Castrar ou Esterilizar:</h3>
+            <p>Gatos castrados ou esterilizados têm menos tendência a brigar e vagar, reduzindo a chance de contrair FIV.</p>
+            <h3>4. Testes Regulares:</h3>
+            <p>Realize testes periódicos para FIV, especialmente se o gato tem acesso ao exterior ou vive em um ambiente com muitos gatos.</p>
+            <h3>5. Separação de Gatos Infectados:</h3>
+            <p>Se você possui múltiplos gatos e um deles é diagnosticado com FIV, mantenha-o separado dos gatos saudáveis para evitar a transmissão.</p>
+            <h3>6. Monitoramento de Saúde:</h3>
+            <p>Gatos infectados pelo FIV precisam de cuidados veterinários regulares para monitorar sua saúde e tratar qualquer infecção secundária imediatamente.</p>
+            <h2>Cuidados Adicionais para Gatos com FIV</h2>
+            <h3>1. Nutrição de Qualidade:</h3>
+            <p>Forneça uma dieta de alta qualidade para fortalecer o sistema imunológico.</p>
+            <h3>2. Ambiente Livre de Estresse:</h3>
+            <p>Mantenha um ambiente tranquilo e seguro, pois o estresse pode comprometer ainda mais o sistema imunológico.</p>
+            <h3>3. Higiene Rigorosa:</h3>
+            <p>Garanta que a área de vida do gato seja mantida limpa para prevenir infecções secundárias.</p>
+            <h3>4. Tratamento Rápido de Infecções:</h3>
+            <p>Atenda prontamente qualquer sinal de infecção ou doença, pois os gatos com FIV têm sistemas imunológicos comprometidos.</p>
+            <p>Cuidar bem de gatos envolve uma combinação de prevenção básica de saúde e medidas específicas para evitar a FIV, garantindo que seu gato tenha uma vida longa e saudável.</p>
+        </div>
+    </div>
+    <img class="gatinho" id="gatinho" src="gatinho_2.png" alt="gato">
+    <div id="outras-informacoes" class="topic">
+        <h2>Outras informações sobre Esporotricose, FIV e FeLV:</h2>
+        <li class="pontinho">
+          <a href="Sintomas.html"> Sintomas </a>
+        </li>
+        <p></p>
+        <li class="pontinho">
+          <a href="prevencao.html"> Prevenção </a>
+        </li>
+        <p></p>
+        <li class="pontinho">
+          <a href="Tratamento.html"> Tratamento </a>
+        </li>
+        <p></p>
+        <li class="pontinho">
+          <a href="esporotricose humana.html"> Esporotricose Humana</a>
+        </li>
+        <p></p>
+        <li class="pontinho">
+          <a href="FIV.html"> FIV </a>
+        </li>
+        <p></p>
+        <li class="pontinho">
+          <a href="FeLV.html"> FeLV </a>
+        </li>
+    </div>
+    <script>
+        function toggleSearch() {
+            var searchBox = document.getElementById("searchBox");
+            if (searchBox.style.display === "none" || searchBox.style.display === "") {
+                searchBox.style.display = "block";
+                document.getElementById("searchInput").focus();
+            } else {
+                searchBox.style.display = "none";
+            }
+        }
+
+        function submitSearch() {
+            var searchTerm = document.getElementById("searchInput").value;
+            alert("Você está procurando por: " + searchTerm);
+            return false;
+        }
+
+        function toggleTopic(topic) {
+            topic.classList.toggle("open");
+        }
+
+        function showGatinho() {
+            var gatinho = document.getElementById("gatinho");
+            gatinho.classList.add("mostrando");
+        }
+
+        function hideGatinho() {
+            var gatinho = document.getElementById("gatinho");
+            gatinho.classList.remove("mostrando");
+        }
+    </script>
+</body>
+</html>

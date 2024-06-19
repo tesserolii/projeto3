@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crazy Cat Gang</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #f0f0f0;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .cabecalho {
+        width: 100%;
+        height: 45px;
+        background-color: black;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        z-index: 1;
+      }
+      .logo {
+        width: 80px;
+        height: 80px;
+        margin-left: 10px;
+        border-radius: 40px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        margin-top: 50px;
+        cursor: pointer;
+      }
+      h1 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        text-align: center;
+        font-size: 40px;
+        margin-top: 65px;
+        transition: color 0.4s ease;
+        text-shadow: 0 3px 4px rgb(228, 190, 47, 1);
+      }
+      h1:hover {
+        color: rgb(228, 190, 47, 1);
+      }
+      .lupa {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      .search-box {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .search-box input {
+        border: none;
+        outline: none;
+        width: 100%;
+      }
+      .search-box input {
+        border: none;
+        outline: none;
+        width: 100%;
+      }
+      .content {
+        margin-top: 110px;
+        padding: 0 20px;
+        
+      
+      }
+      .topic {
+        margin-bottom: 20px;
+        margin-left: 20px;
+      }
+      .topic h2 {
+        color: black;
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-shadow: 0 3px 4px rgb(228, 190, 47, 1);
+      }
+      .topic p {
+        color: #555;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      .capa {
+        width: 45%;
+        margin: 0 auto;
+        display: block;
+        margin-top: 30px;
+      }
+      .linha{
+        margin-top: 50px;
+        color: #333;
+        margin-left: 200px;
+        margin-right: 200px;
+      }
+      .container {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        background: white;
+        border: 1px solid rgb(228, 190, 47, 1);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-top: 18px;
+      }
+      .container p {
+        margin: 0;
+        padding-bottom: 10px;
+        font-weight: bold;
+        color: #333;
+        text-shadow: 0 3px 4px rgb(228, 190, 47, 1);;
+      }
+      .icones {
+        display: flex;
+        gap: 20px;
+      }
+      .icones a {
+        color: black;
+        font-size: 25px;
+        text-decoration: none;
+        transition: color 0.s;
+      }
+      .icones a:hover {
+        color: rgb(228, 190, 47, 1);
+      }
+      .gatinho {
+        visibility: hidden;
+        width: 100px;
+        position: absolute;
+        top: 15%;
+        right: 22.6%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      }
+      .mostrando {
+        opacity: 1;
+        visibility: visible;
+      }
+      .rodape {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        bottom: 0;
+        width: 100%;
+        position: relative;
+        right: 0;
+        left: 0;
+        bottom: 0;
+      }
+      .rodape a {
+        color: #ffd700;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .rodape a:hover {
+        text-decoration: underline;
+      }
+      .sidebar {
+        position: absolute;
+        top: 170px;
+        left: 30px;
+        width: 200px;
+        border-radius: 20px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid rgb(228, 190, 47, 1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .sidebar li {
+        margin-bottom: 10px;
+      }
+      .sidebar a {
+        text-decoration: none;
+        margin-left: 10px;
+        color: #333;
+        font-size: 18px;
+        transition: color 0.4s;
+      }
+      .sidebar a:hover {
+        color: rgb(228, 190, 47, 1);
+      }
+      .pontinho{
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cabecalho">
+      <img class="lupa" src="lupa3.png" alt="lupa" onclick="toggleSearch()" />
+      <div class="search-box" id="searchBox">
+        <input type="text" placeholder="Buscar..." />
+      </div>
+    </div>
+    <img class="logo" src="logo.png" alt="logo ccg" />
+    <h1 onmouseover="showGatinho()" onmouseout="hideGatinho()">
+      Esporotricose, FIV e FELV
+    </h1>
+    <div class="sidebar">
+      <ul>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('esporotricose')">Esporotricose</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('transmissao')">Transmissão</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('fiv-felv')">FIV e FELV</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('outras-informacoes')">Outras Informações</a></li>
+      </ul>
+    </div>
+    <div style="position: relative">
+      <img class="capa" src="capa.png" alt="foto capa" />
+      <hr class="linha">
+      <div class="container">
+        <p>Siga-nos nas redes sociais!</p>
+        <div class="icones">
+          <a href="https://www.facebook.com/crazycatgang" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://www.instagram.com/crazycatgang" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+      <img class="gatinho" id="gatinho" src="gatinho.png" alt="gato" />
+    </div>
+    <div class="content">
+      <div id="esporotricose" class="topic" onclick="toggleTopic(this)">
+        <h2>Esporotricose</h2>
+        <p>
+          A esporotricose é um grave tipo de micose transmitida por fungos do
+          gênero Sporothrix, pode afetar felinos, bovinos, suínos, equinos e até
+          mesmo humanos.
+        </p>
+      </div>
+      <div id="transmissao" class="topic" onclick="toggleTopic(this)">
+        <h2>Transmissão</h2>
+        <p>
+          Inoculação do agente por contato do animal com materiais contaminados
+          pelo fungo (cascas de árvore, palha, farpas, espinhos, terra), contato
+          com outros animais e pessoas através de arranhões, mordidas ou contato
+          direto com as lesões. A inalação ou ingestão do fungo pode também
+          produzir a doença no indivíduo, sendo que sua forma é determinada pela
+          resposta imunológica do hospedeiro. Em humanos, o fungo não tem
+          predileção sexual, racial ou faixa etária, mas se relaciona com a
+          ocupação profissional do indivíduo, afetando principalmente atuantes
+          de áreas rurais e que lidam diariamente com gatos (como estudantes e
+          médicos veterinários).
+        </p>
+      </div>
+      <div id="fiv-felv" class="topic" onclick="toggleTopic(this)">
+        <h2>FIV e FELV</h2>
+        <p>
+          A FIV é uma enfermidade provocada pelo vírus da imunodeficiência
+          felina, que afeta o sistema imunológico dos gatos de maneira similar
+          ao HIV nos humanos, razão pela qual é conhecida popularmente como AIDS
+          felina. Esse vírus pode ser transmitido de um gato para outro durante
+          o parto, a amamentação, em brigas, no acasalamento e através do
+          contato com sangue e urina. Gatos positivos para FIV possuem uma
+          imunidade comprometida, tornando-os mais vulneráveis a doenças
+          oportunistas. Até mesmo uma gripe simples pode ser difícil de
+          combater. Por outro lado, a FeLV é a leucemia felina, também causada
+          por um vírus, que pode ser transmitido através de secreções como
+          saliva, fezes, leite e urina de gatos infectados. Gatos positivos para
+          FeLV enfrentam a imunidade baixa como um problema, além do risco
+          aumentado de desenvolver tumores.
+        </p>
+      </div>
+      <div id="outras-informacoes" class="topic">
+        <h2>Outras informações sobre Esporotricose, FIV e FELV:</h2>
+        <li class="pontinho">
+          <a href="Sintomas.html"> Sintomas </a>
+        </li>
+        <p></p>
+        <li class="pontinho">
+          <a href="prevencao.html"> Prevenção </a>
+        </li>
+        <p></p>
+        <li class="pontinho">
+          <a href="Tratamento.html"> Tratamento </a>
+        </li>
+        <p></p>
+        <li class="pontinho">
+          <a href="esporotricose humana.html"> Esporotricose Humana</a>
+        </li>
+        <p></p>
+        <li class="pontinho">
+          <a href="FIV.html"> FIV </a>
+        </li>
+        <p></p>
+        <li class="pontinho">
+          <a href="FeLV.html"> FeLV </a>
+        </li>
+      </div>
+      <div class="rodape" >
+        <p></p>
+          Siga-nos nas redes sociais:
+          <a href="https://www.facebook.com/crazycatgang" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://www.instagram.com/crazycatgang" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </p>
+        
+      </div>
+    </div>
+
+    <script>
+      function toggleSearch() {
+        var searchBox = document.getElementById("searchBox");
+        if (
+          searchBox.style.display === "none" ||
+          searchBox.style.display === ""
+        ) {
+          searchBox.style.display = "block";
+          document.getElementById("searchInput").focus();
+        } else {
+          searchBox.style.display = "none";
+        }
+      }
+
+      function submitSearch() {
+        var searchTerm = document.getElementById("searchInput").value;
+        alert("Você está procurando por: " + searchTerm);
+        return false;
+      }
+
+      function toggleTopic(topic) {
+        topic.classList.toggle("open");
+      }
+      function showGatinho() {
+        var gatinho = document.getElementById("gatinho");
+        gatinho.classList.add("mostrando");
+      }
+
+      function hideGatinho() {
+        var gatinho = document.getElementById("gatinho");
+        gatinho.classList.remove("mostrando");
+      }
+      function scrollToSection(id) {
+        var element = document.getElementById(id);
+        element.scrollIntoView({ behavior: 'smooth' });
+  }
+    </script>
+  </body>
+</html>
